@@ -3,7 +3,7 @@ CONTEXT_PATH: /api
 
 ############# DATABASE INFO ##################
 DATABASE_URL: localhost
-DATABASE_PASSWORD: chaimaa123
-DATABASE_USERNAME: chaimaa
-DATABASE_NAME: facturation
+DATABASE_PASSWORD: 123
+DATABASE_USERNAME: postgres
+DATABASE_NAME: Facturation
 DATABASE_PORT: 5432
