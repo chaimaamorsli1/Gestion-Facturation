@@ -93,4 +93,8 @@ public class FactureService implements IFactureService {
     public List<Facture> findAll() {
         return factureRepo.findAll();
     }
+
+    public List<Facture> getFacture() {
+        return factureRepo.findAll();
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.gestionFacturation.Controllers;
 
 import com.example.gestionFacturation.Services.FactureService;
+import com.example.gestionFacturation.entities.Facture;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
+import java.util.List;
 
 @RestController
 @CrossOrigin("http://localhost:8080")
@@ -32,7 +34,8 @@ public class FactureController {
     }
 
     @GetMapping("/test")
-    public String test() {
-        return "test";
+    public List<Facture> getFacture(){
+        return factureService.getFacture();
     }
+
 }

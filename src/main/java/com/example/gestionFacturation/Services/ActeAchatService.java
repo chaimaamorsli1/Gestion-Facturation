@@ -24,7 +24,7 @@ import java.util.stream.Stream;
 @Service
 public class ActeAchatService implements IActeAchatService {
 
-    private final Path root = Path.of("uploads");
+    private final Path root = Path.of("Uploads/Actes");
 
     private ActeAchatRepository acteAchatRepo;
 
@@ -77,6 +77,10 @@ public class ActeAchatService implements IActeAchatService {
 
     @Override
     public List<ActeAchat> findAll() {
+        return acteAchatRepo.findAll();
+    }
+
+    public List<ActeAchat> getActeAchat() {
         return acteAchatRepo.findAll();
     }
 }

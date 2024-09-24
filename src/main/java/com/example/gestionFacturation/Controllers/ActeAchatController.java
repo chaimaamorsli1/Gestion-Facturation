@@ -1,6 +1,7 @@
 package com.example.gestionFacturation.Controllers;
 
 import com.example.gestionFacturation.Services.ActeAchatService;
+import com.example.gestionFacturation.entities.ActeAchat;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
+import java.util.List;
 
 @RestController
 @CrossOrigin("http://localhost:8080")
@@ -31,6 +33,10 @@ public class ActeAchatController {
         catch (Exception e){
             e.printStackTrace();
         }
+    }
+    @GetMapping( "/test" )
+    public List<ActeAchat> getActeAchat(){
+        return  acteAchatService.getActeAchat();
     }
 
 }
