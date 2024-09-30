@@ -4,8 +4,8 @@ server:
     contextPath: ${CONTEXT_PATH:/api}
 spring:
   datasource:
-    password: ${DATABASE_PASSWORD:chaimaa123}
-    username: ${DATABASE_USERNAME:chaimaa}
+    password: ${DATABASE_PASSWORD:123}
+    username: ${DATABASE_USERNAME:postgres}
     url: jdbc:postgresql://${DATABASE_URL:localhost}:${DATABASE_PORT:54320}/${DATABASE_NAME:facturation}
     driver-class-name: org.postgresql.Driver
   profiles:
