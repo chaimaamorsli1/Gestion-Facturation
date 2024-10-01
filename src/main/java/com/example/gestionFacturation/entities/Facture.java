@@ -5,7 +5,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -15,7 +17,7 @@ public class Facture {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int numero;
     private double montant;
-    private Date date_Facture;
+    private  LocalDate date_Facture;
     private String statut;
 
 }
