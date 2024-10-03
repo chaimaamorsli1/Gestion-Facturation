@@ -28,7 +28,7 @@ public class FactureController {
         factureService.deleteFacture(numero);
     }
     @PutMapping
-    public void updateFacture(@PathVariable int numero, @RequestBody Facture facture){
+    public void updateFacture(@RequestParam int numero, @RequestBody Facture facture){
         factureService.updateFacture(numero,facture);
     }
 }

@@ -31,11 +31,16 @@ public class FactureService {
 
     public void updateFacture(int numero, Facture facture) {
        Facture f = factureRepository.findById(numero).orElseThrow(()->new EntityNotFoundException("not found"));
-       f.setNumero(numero);
+       //f.setNumero(numero);
        f.setMontant(facture.getMontant());
        f.setDate_Facture(facture.getDate_Facture());
        f.setStatut(facture.getStatut());
-       factureRepository.save(f);
+       //factureRepository.save(f);
+        try {
+            factureRepository.save(f);
+        } catch (Exception e) {
+            throw new RuntimeException("Erreur lors de la mise à jour de la facture : " + e.getMessage());
+        }
     }
 
 
