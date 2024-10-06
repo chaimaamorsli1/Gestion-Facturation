@@ -8,6 +8,7 @@ spring:
     username: ${DATABASE_USERNAME:postgres}
     url: jdbc:postgresql://${DATABASE_URL:localhost}:${DATABASE_PORT:54320}/${DATABASE_NAME:facturation}
     driver-class-name: org.postgresql.Driver
+
   profiles:
     active: local
 
@@ -24,3 +25,5 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         types.print.banner: false
         format_sql: true
+        hbm2ddl:
+          auto: create-drop
