@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -41,9 +42,13 @@ public class FactureController {
 
     //upload facture
     @PostMapping
-    public ResponseEntity<String> uploadFacture(@RequestParam("file") MultipartFile file,@RequestBody Facture facture) {
+    public ResponseEntity<String> uploadFacture(@RequestParam("file") MultipartFile file,
+                                               @RequestParam double montant,
+                                               @RequestParam String statut
+//                                                @RequestParam LocalDate date
+    ) {
         try {
-            factureService.uploadFacture(file, facture);
+            factureService.uploadFacture(file,montant,statut);
              return ResponseEntity.ok("File uploaded successfully ! ");
         } catch (Exception e) {
             e.printStackTrace();
@@ -52,4 +57,9 @@ public class FactureController {
 
 
     }
+    ///search facture
+//    @GetMapping
+//    public Facture searchFacture(@RequestParam int numero){
+//        return factureService.searchFacture(numero);
+//    }
 }
