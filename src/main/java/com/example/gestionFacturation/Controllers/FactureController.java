@@ -41,9 +41,9 @@ public class FactureController {
 
     //upload facture
     @PostMapping
-    public ResponseEntity<String> uploadFacture(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<String> uploadFacture(@RequestParam("file") MultipartFile file,@RequestBody Facture facture) {
         try {
-            factureService.uploadFacture(file);
+            factureService.uploadFacture(file, facture);
              return ResponseEntity.ok("File uploaded successfully ! ");
         } catch (Exception e) {
             e.printStackTrace();

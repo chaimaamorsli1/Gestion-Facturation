@@ -3,8 +3,6 @@ package com.example.gestionFacturation.Services;
 import com.example.gestionFacturation.Repositories.FactureRepository;
 import com.example.gestionFacturation.entities.Facture;
 import jakarta.persistence.EntityNotFoundException;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.text.PDFTextStripper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,7 +11,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -86,7 +83,7 @@ public class FactureService {
 //
 
 
-    public void uploadFacture(MultipartFile file) throws Exception {
+    public void uploadFacture(MultipartFile file, Facture facture) throws Exception {
         if (file.isEmpty()) {
             throw new IllegalArgumentException("File must not be empty");
         }
@@ -104,7 +101,7 @@ public class FactureService {
             Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
 
             // Create and save Facture entity
-            Facture facture = new Facture();
+            //Facture facture = new Facture();
             facture.setFile_path(filePath.toString());
 
             // Save to the repository
