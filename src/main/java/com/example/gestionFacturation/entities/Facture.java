@@ -20,5 +20,7 @@ public class Facture {
     @JsonFormat  (pattern = "dd-MM-yyyy")
     private  LocalDate date_Facture;
     private String statut;
+    private String file_name;
+    private String file_path;
 
 }
