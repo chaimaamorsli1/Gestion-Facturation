@@ -4,7 +4,7 @@ server:
     contextPath: ${CONTEXT_PATH:/api}
 spring:
   datasource:
-    password: ${DATABASE_PASSWORD:123}
+    password: ${DATABASE_PASSWORD:Amine}
     username: ${DATABASE_USERNAME:postgres}
     url: jdbc:postgresql://${DATABASE_URL:localhost}:${DATABASE_PORT:54320}/${DATABASE_NAME:facturation}
     driver-class-name: org.postgresql.Driver
@@ -22,7 +22,7 @@ spring:
         jdbc.batch_size: 30
         order_inserts: true
         jdbc.time_zone: UTC
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+        dialect: org.hibernate.dialect.PostgresSQLDialect
         types.print.banner: false
         format_sql: true
         hbm2ddl:
